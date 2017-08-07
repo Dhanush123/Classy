@@ -17,6 +17,7 @@
   "author": "dhanush patel, tejas shah, raj bhanushali",
   "license": "ISC",
   "dependencies": {
+    "actions-on-google": "^1.2.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3"
   },

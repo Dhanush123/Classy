@@ -2,7 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const App = require('actions-on-google').ApiAiApp;
 const server = express();
 
 server.use(bodyParser.urlencoded({
@@ -12,12 +12,13 @@ server.use(bodyParser.urlencoded({
 server.use(bodyParser.json());
 
 server.post('/hook', function(req, res) {
-    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.echoText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
-    return res.json({
-        speech: speech,
-        displayText: speech,
-        source: 'webhook-echo-sample'
-    });
+  const app = new App({req, res});
+  console.log('Request headers: ' + JSON.stringify(request.headers));
+  console.log('Request body: ' + JSON.stringify(request.body));
+
+  const actionMap = new Map();
+
+  app.handleRequest(actionMap);
 });
 
 
