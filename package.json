@@ -19,7 +19,8 @@
   "dependencies": {
     "actions-on-google": "^1.2.0",
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "passport-canvas": "0.0.2"
   },
   "bugs": {
     "url": "https://github.com/Dhanush123/Classy/issues"
