@@ -3,7 +3,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const App = require('actions-on-google').ApiAiApp;
+const request = require('request');
 const server = express();
+
+var accessToken = "7~k8r7YlTXY01Xr3goRCguHMI7Sy8IovEWQFkceIHQs35X7KgXyjoyiXc0wbqECWPh";
+
+var makeRequest = function(path, type, callback) {
+  request[type](`https://canvas.instructure.com/api/v1/${path}?access_token=${accessToken}`, function (error,response, body) {
+    callback(error, body);
+  });
+}
 
 server.use(bodyParser.urlencoded({
     extended: true
@@ -21,7 +30,9 @@ server.post('/hook', function(req, res) {
   app.handleRequest(actionMap);
 });
 
-
 server.listen((process.env.PORT || 8000), function() {
     console.log("Server up and listening");
+    makeRequest("courses", "get", (err, body) => {
+      console.log(body);
+    });
 });
