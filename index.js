@@ -31,8 +31,8 @@ server.post('/hook', function(req, res) {
 });
 
 server.listen((process.env.PORT || 8000), function() {
-    console.log("Server up and listening");
-    makeRequest("courses", "get", (err, body) => {
+    //console.log("Server up and listening");
+    makeRequest("users/self/activity_stream", "get", (err, body) => {
       console.log(body);
     });
 });
