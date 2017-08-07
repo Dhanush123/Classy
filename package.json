@@ -1,0 +1,23 @@
+{
+  "name": "classy",
+  "version": "1.0.0",
+  "description": "google action",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhanush123/Classy.git"
+  },
+  "keywords": [
+    "google",
+    "action"
+  ],
+  "author": "dhanush patel, tejas shah, raj bhanushali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dhanush123/Classy/issues"
+  },
+  "homepage": "https://github.com/Dhanush123/Classy#readme"
+}
